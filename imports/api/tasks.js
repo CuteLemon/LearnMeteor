@@ -23,7 +23,7 @@ Meteor.methods({
 	},
 	'tasks.remove'(taskId){
 		check(taskId,String);
-		if( ! Meteor.userId() || Meteor.userId()!=Tasks.findOne({_id:taskid}).owner){
+		if( ! Meteor.userId() || Meteor.userId()!=Tasks.findOne({_id:taskId}).owner){
 			throw new Meteor.Error('not-authorized');
 		}
 		console.log(Tasks.findOne({username:'bilibili'}).username);
